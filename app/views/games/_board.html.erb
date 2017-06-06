@@ -1,0 +1,9 @@
+<div class="outter">
+<% nums = (-1..9).to_a %>
+<% letters = ("A".."J").to_a %>
+<% nums.each do |num| %> 
+  <div class="row row-#{num}">
+    <%= render partial: 'games/boardrow', locals: {nums: nums, y_num: num, letters: letters}%>
+  </div>
+<% end %>
+</div>

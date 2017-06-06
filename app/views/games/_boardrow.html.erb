@@ -1,3 +1,13 @@
-<% nums.each do |y_num| %>
-  <div class="block block<%=x_num%><%=y_num%>"></div>
+<% nums.each do |x_num| %>
+  <% if y_num == -1 && x_num != -1 %>
+    <div class="label block block<%=x_num%><%=y_num%>">
+      <div class="overlay"><%= letters[x_num] %></div>
+    </div>
+  <% elsif y_num != -1 && x_num == -1 %>
+    <div class="label block block<%=x_num%><%=y_num%>"><div class="overlay"><%= y_num + 1 %></div></div>
+  <% elsif y_num == -1 && x_num == -1 %>
+    <div class="label block block<%=x_num%><%=y_num%>"><div class="overlay"></div></div>
+  <% else %>
+    <div class="block block<%=x_num%><%=y_num%>"><div class="overlay"></div></div>
+  <% end %>
 <% end %>
