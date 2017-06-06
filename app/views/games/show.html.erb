@@ -1,0 +1,8 @@
+<div class="outter">
+<% nums = (0..9).to_a %>
+<% nums.each do |num| %> 
+  <div class="board board-1">
+    <%= render partial: 'games/boardrow', locals: {nums: nums, x_num: num}%>
+  </div>
+<% end %>
+</div>
