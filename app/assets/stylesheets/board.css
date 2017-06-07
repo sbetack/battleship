@@ -26,32 +26,46 @@ h1 {
   font-size: 20px;
 }
 .row {
-  display: grid;
-  grid-template-columns: repeat(11, 9.09%);
-  grid-template-rows: repeat(11, 9.09%);
+  /*display: grid;*/
+  display: inline-block;
+  /*grid-template-columns: repeat(11, 9.09%);*/
+  /*grid-template-rows: repeat(11, 9.09%);*/
 }
 .block {
-  border: .01em solid rgba(0, 0, 0, .4);
+  border: .1em solid rgba(0, 0, 0, .4);
   background-image: url(water.jpg);
   height: 25px;
   z-index: -1;
   text-align: center;
+  width: 31.34px;
+  margin: 0;
+  float:left;
 }
 .outter {
   width: 380px;
   border: 3px solid rgba(0, 0, 0, .6);
   border-radius: 10px;
   margin-bottom: 10px;
+  background-image: url(water.jpg);
+  z-index: -3;
 }
 .overlay {
   height: 100%;
+  z-index: -2;
+  background-color: rgba(255, 255, 255, .55);
+  margin: 0;
+}
+.overlay-box {
+  height: 100%;
   z-index: 2;
   background-color: rgba(255, 255, 255, .55);
+  margin: 0;
+  box-shadow: 1px 4px 1px .5px rgba(0, 0, 0, .7);
 }
 .label {
-  font-family: 'Arimo', sans-serif;f
+  font-family: 'Arimo', sans-serif;
 }
-.label .overlay {
+.label .overlay-box {
   background-color: rgba(255, 255, 255, .8);
 }
 .player-one {
@@ -67,10 +81,14 @@ h1 {
 }
 @media (max-width: 858px){
   .block {    
-    height: 18.5px;
+    height: 19px;
+    width: 24.62px;
+  }
+  .overlay-box {
+    box-shadow: 1px 3px 1px .5px rgba(0, 0, 0, .6);
   }
   .outter {
-    width: 375px;
+    width: 306px;
   }
   h1 {
     text-align: left;
@@ -80,13 +98,15 @@ h1 {
 @media only screen and (max-device-width: 415px) {
   .block {
     height: 60px;
-    text-align: center;
+    width: 76px;
+    border: 1px solid rgba(0, 0, 0, .4);
   }
   .outter {
     width: 860px;
   }
   .label {
-    font-size: 50px;
+    font-size: 40px;
+    border: 1px solid black;
   }
   h1 {
     font-size: 50px;
