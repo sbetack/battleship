@@ -1,0 +1,24 @@
+
+.new-game-box, .join-game-box {
+  font-family: 'Bubbler One', sans-serif;
+  width: 45%;
+  border: 1px solid gray;
+  display: inline-block;
+  margin: 0 auto;
+  font-weight: 900;
+}
+.play-button {
+  font-family: 'Bubbler One', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  width: 70px;
+  padding: 4px;
+  margin: 5px;
+  background-color: #587dad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.play-button:hover {
+  background-color: #324763;
+}
