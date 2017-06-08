@@ -6,6 +6,7 @@
   display: inline-block;
   margin: 0 auto;
   font-weight: 900;
+  vertical-align: top;
 }
 .play-button {
   font-family: 'Bubbler One', sans-serif;
