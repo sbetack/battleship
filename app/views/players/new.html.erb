@@ -1,0 +1,22 @@
+<center>
+  <div class="new-game-box">
+    <h2>Start a new game</h2>
+    <div class="form-group">
+      <%= form_for :player do |f| %>
+        username: <%= f.text_field :username, class: "form-input" %>
+        <%= f.submit "PLAY!", class: 'play-button' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="join-game-box">
+    <h2>Join a game</h2>
+    <div class='form-group'>
+      <h3>here are all of the current games!</h3>
+      <% @games.each do |game| %>
+        <ul>
+          <li><%= link_to "play with: #{game.players[0].username}", game %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</center>
