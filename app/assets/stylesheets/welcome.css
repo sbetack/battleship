@@ -23,3 +23,7 @@
 .play-button:hover {
   background-color: #324763;
 }
+.current-games {
+  border-bottom: 1px dotted gray;
+  margin-right: 3px;
+}
