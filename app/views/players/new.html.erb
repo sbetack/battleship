@@ -14,7 +14,13 @@
       <h3>here are all of the current games!</h3>
       <% @games.each do |game| %>
         <ul>
-          <li><%= link_to "play with: #{game.players[0].username}", game %></li>
+          <li class="current-games"><%= link_to "play with: #{game.players[0].username}", game %>
+            <%= form_for :player do |f| %>
+              username: <%= f.text_field :username, class: "form-input" %>
+            <%= f.submit "PLAY!", class: 'play-button' %>
+            <% end %>
+          </li>
+
         </ul>
       <% end %>
     </div>
