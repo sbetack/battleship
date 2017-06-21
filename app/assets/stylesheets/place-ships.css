@@ -1,0 +1,39 @@
+.place-ships-board h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.place-ships-board {
+  width: 35%;
+  display: inline-block;
+  /*border: 1px solid black;*/
+  margin-left: 10%;
+}
+.place-ships-board, #ship-box {
+  margin-top: 20px;
+}
+#ship-box {
+  /*border: 1px solid black;*/
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+.ship {
+  background-color: gray;
+  width: 30px;
+  margin: 15px;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: inline-block;
+}
+.length {
+  height: 20px;
+}
+.dot {
+  background-color: black;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}

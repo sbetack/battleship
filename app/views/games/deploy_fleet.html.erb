@@ -1,0 +1,32 @@
+<div class='place-ships-board'>
+  <h2>Deploy your ships below!</h2>
+  <%= render partial: 'games/board' %>
+</div>
+
+<div id="ship-box">
+  <div id="ship-1" class="ship">
+    <% 2.times do %>
+      <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+  <div id="ship-2" class="ship">
+    <% 3.times do %>
+      <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+  <div id="ship-3" class="ship">
+    <% 3.times do %>
+      <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+  <div id="ship-4" class="ship">
+    <% 4.times do %>
+      <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+  <div id="ship-5" class="ship">
+    <% 5.times do %>
+      <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+</div>
