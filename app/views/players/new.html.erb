@@ -2,25 +2,30 @@
   <div class="new-game-box">
     <h2>Start a new game</h2>
     <div class="form-group">
-      <%= form_for :player do |f| %>
+      <%= form_for @player do |f| %>
         username: <%= f.text_field :username, class: "form-input" %>
         <%= f.submit "PLAY!", class: 'play-button' %>
+      <% end %>
+      <% if @errors %>
+      <p class="error"><%= @errors %></p>
       <% end %>
     </div>
   </div>
   <div class="join-game-box">
     <h2>Join a game</h2>
     <div class='form-group'>
-      <h3>here are all of the current games!</h3>
+      <h5>here are all of the current games!</h5>
       <% @games.each do |game| %>
         <ul>
-          <li class="current-games"><%= link_to "play with: #{game.players[0].username}", game %>
-            <%= form_for :player do |f| %>
+        <% if game.players.count == 1 %>
+          <li class="current-games"> <%= "Play with:  #{game.players[0].username}" %> 
+            <%= form_for @player do |f| %>
+              <%= f.hidden_field :game_id, value: game.id %>
               username: <%= f.text_field :username, class: "form-input" %>
             <%= f.submit "PLAY!", class: 'play-button' %>
             <% end %>
           </li>
-
+        <% end %>
         </ul>
       <% end %>
     </div>

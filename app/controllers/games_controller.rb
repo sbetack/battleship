@@ -4,4 +4,7 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def deploy_fleet
+    
+  end
 end
