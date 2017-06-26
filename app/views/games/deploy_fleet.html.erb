@@ -4,29 +4,43 @@
 </div>
 
 <div id="ship-box">
-  <div id="ship-1" class="ship">
+  <p>Click on a ship to place it!</p>
+  <div id="ship-1" data-ship-length="2" class="ship">
     <% 2.times do %>
       <%= render partial: 'games/ship_row' %>
     <% end %>
   </div>
-  <div id="ship-2" class="ship">
+  <div id="ship-2" data-ship-length="3" class="ship">
     <% 3.times do %>
       <%= render partial: 'games/ship_row' %>
     <% end %>
   </div>
-  <div id="ship-3" class="ship">
+  <div id="ship-3" data-ship-length="3" class="ship">
     <% 3.times do %>
       <%= render partial: 'games/ship_row' %>
     <% end %>
   </div>
-  <div id="ship-4" class="ship">
+  <div id="ship-4" data-ship-length="4" class="ship">
     <% 4.times do %>
       <%= render partial: 'games/ship_row' %>
     <% end %>
   </div>
-  <div id="ship-5" class="ship">
+  <div id="ship-5" data-ship-length="5" class="ship">
     <% 5.times do %>
       <%= render partial: 'games/ship_row' %>
+    <% end %>
+  </div>
+  <div id="starting-position">
+    <%= form_tag(place_ships_path, method: "post") do %>
+      <span>Choose your starting position</span>
+      <%= select_tag 'letter_start', options_for_select(("A".."K").to_a) %>
+      <%= select_tag 'number_start', options_for_select((1..10).to_a) %>
+      <br>
+      <span>And your direction</span>
+      <%= select_tag 'direction', options_for_select(["up", "down", "left", "right"]) %>
+      <%= hidden_field_tag "ship_length" %>
+      <br>
+      <%= submit_tag "Place!" %>
     <% end %>
   </div>
 </div>
