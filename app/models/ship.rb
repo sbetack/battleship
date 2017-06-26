@@ -10,5 +10,12 @@ class Ship < ApplicationRecord
     end
     fleet
   end
+
+  def place_ship(player, length, ship_spaces)
+    ship_spaces.each do |space| 
+      space.ship = self 
+      space.save
+    end
+  end
   
 end

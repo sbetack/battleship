@@ -4,19 +4,20 @@
   margin-bottom: 20px;
 }
 .place-ships-board {
-  width: 35%;
+  width: 350px;
   display: inline-block;
-  /*border: 1px solid black;*/
   margin-left: 10%;
 }
 .place-ships-board, #ship-box {
   margin-top: 20px;
 }
 #ship-box {
-  /*border: 1px solid black;*/
-  width: 40%;
+  margin-left: 20px;
+  width: 45%;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: bottom;
+  padding-left: 10%;
+  /*border-left: 1px solid black;*/
 }
 .ship {
   background-color: gray;
@@ -25,6 +26,9 @@
   border-radius: 5px;
   border: 2px solid black;
   display: inline-block;
+}
+.active {
+  border: 5px solid #6e92cc;
 }
 .length {
   height: 20px;
@@ -36,4 +40,8 @@
   height: 10px;
   margin: 0 auto;
   margin-top: 10px;
+}
+#starting-position {
+  width: 350px;
+  display: inline-block;
 }
