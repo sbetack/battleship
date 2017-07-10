@@ -1,10 +1,11 @@
 class Board < ApplicationRecord
-  has_many :spaces
+  belongs_to :game, counter_cache: :player_count
   belongs_to :player
+  has_many :ships
+  has_many :spaces
 
-  def self.generate_player_game(player)
-    board = Board.create(player: player)
-    Ship.create_fleet(player)
-    Space.create_spaces(board)
+  def generate_player_game
+    Ship.create_fleet(self)
+    Space.create_spaces(self)
   end
 end

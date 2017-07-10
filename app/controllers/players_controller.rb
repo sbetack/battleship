@@ -10,14 +10,16 @@ class PlayersController < ApplicationController
     if @player.save
       if player_params[:game_id]
         game_id = player_params[:game_id]
-        @player.games << Game.find(game_id)
-        Board.generate_player_game(@player)
-        redirect_to "/deploy/#{game_id}/player/#{@player.id}"
+        @board = Board.create(player: @player, game_id: game_id)
+        @board.generate_player_game
+        # render 'games/deploy_fleet'
+        redirect_to "/deploy/board/#{@board.id}"
       else
         game = Game.create()
-        @player.games << game
-        Board.generate_player_game(@player)
-        redirect_to "/deploy/#{game.id}/player/#{@player.id}"
+        @board = Board.create(player: @player, game: game)
+        @board.generate_player_game
+        # render 'games/deploy_fleet'
+        redirect_to "/deploy/board/#{@board.id}"
       end
     else 
       @errors = @player.errors.full_messages

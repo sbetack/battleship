@@ -1,6 +1,6 @@
 <div class='place-ships-board'>
   <h2>Deploy your ships below!</h2>
-  <%= render partial: 'games/board' %>
+  <%= render partial: 'games/board', locals: {board: @board}%>
 </div>
 
 <div id="ship-box">

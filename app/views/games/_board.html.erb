@@ -9,3 +9,19 @@
   <% end %>
   </div>
 </div>
+<div class='fix'>
+  
+  <div class="test-2">
+    <% nums = (1..10).to_a.each do |num| %>
+      <div><%= num %></div>
+    <% end %>
+  </div>
+  <div class="test">
+    <% letters = ("A".."J").to_a.each do |letter| %>
+      <div><%= letter %></div>
+    <% end %>
+    <% board.spaces.each do |space| %>
+      <div><%= space.coordinate %></div>
+    <% end %>
+  </div>
+</div>
