@@ -1,6 +1,6 @@
 class Space < ApplicationRecord
   belongs_to :board
-  belongs_to :ship, optional: true
+  belongs_to :ship, optional: true  
   
   L_TO_N = {"A": 0, 
             "B": 1,

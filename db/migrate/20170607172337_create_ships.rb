@@ -3,7 +3,7 @@ class CreateShips < ActiveRecord::Migration[5.1]
     create_table :ships do |t|
       t.integer :length
       t.boolean :sunk
-      t.integer :player_id
+      t.integer :board_id
       
       t.timestamps
     end

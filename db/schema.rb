@@ -17,12 +17,6 @@ ActiveRecord::Schema.define(version: 20170607172337) do
 
   create_table "boards", force: :cascade do |t|
     t.integer "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "game_players", force: :cascade do |t|
-    t.integer "player_id"
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170607172337) do
   create_table "ships", force: :cascade do |t|
     t.integer "length"
     t.boolean "sunk"
-    t.integer "player_id"
+    t.integer "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

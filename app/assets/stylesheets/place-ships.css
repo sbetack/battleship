@@ -28,7 +28,8 @@
   display: inline-block;
 }
 .active {
-  border: 5px solid #6e92cc;
+  border: 6px solid #a9c1e8;
+  box-shadow: 1px 1px 2px gray;
 }
 .length {
   height: 20px;
@@ -44,4 +45,30 @@
 #starting-position {
   width: 350px;
   display: inline-block;
+}
+.test {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 2px;
+  grid-template-rows: repeat(10, 1fr);
+  border: 1px solid black;
+  float: left;
+  margin: 0;
+}
+
+.test div:hover {
+  color: yellow;
+}
+
+.test-2 {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(10 1fr);
+  border: 1px solid black;
+  width: 20px;
+  float: left;
+  margin: 0;
+}
+.fix {
+  /*display: inline-block;*/
 }
