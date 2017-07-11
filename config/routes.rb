@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :players
   get '/deploy/board/:board_id', :to => 'games#deploy_fleet', as: 'deploy'
   post 'place/board/:board_id', controller: 'ships', action: :place, as:"place_ships"
-  get '/play', :to => 'games#play'
+  get '/play/:game_id', :to => 'games#play'
 end
