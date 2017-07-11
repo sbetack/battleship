@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
   def deploy_fleet
     @board = Board.find(get_params[:board_id])
+    @ships = @board.ships.order(length: :desc)
   end
 
   private

@@ -62,10 +62,11 @@ class Space < ApplicationRecord
         spaces << next_space
       end 
     end
-    if !spaces.include?(nil)
-      return spaces 
+    spaces_are_invalid = spaces.any? { |space| space == [] }
+    if spaces_are_invalid
+      spaces = [nil]
     else
-      return "INVALID CHOICE. SHIP WILL BE OUT OF BOUNDS."
+      return spaces
     end
   end
 

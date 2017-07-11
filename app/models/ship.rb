@@ -17,5 +17,10 @@ class Ship < ApplicationRecord
       space.save
     end
   end
+
+  def self.all_ships_placed?(board)
+    ships = self.where("board_id = #{board.id}")
+    ships.all? { |ship| ship.spaces != [] }
+  end
   
 end
