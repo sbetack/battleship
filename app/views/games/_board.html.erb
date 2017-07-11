@@ -1,27 +1,25 @@
-<div class="outter">
-  <div class="overlay">
-  <% nums = (-1..9).to_a %>
-  <% letters = ("A".."J").to_a %>
-  <% nums.each do |num| %> 
-    <div class="row row-<%= num %>">
-      <%= render partial: 'games/boardrow', locals: {nums: nums, y_num: num, letters: letters}%>
-    </div>
-  <% end %>
-  </div>
-</div>
 <div class='fix'>
-  
   <div class="test-2">
-    <% nums = (1..10).to_a.each do |num| %>
-      <div><%= num %></div>
+    <% nums = (0..10).to_a.each do |num| %>
+      <div class="block label" id="num-label"><div class="overlay-box"><%= num %></div></div>
     <% end %>
   </div>
   <div class="test">
     <% letters = ("A".."J").to_a.each do |letter| %>
-      <div><%= letter %></div>
+      <div class="block label" id="letter-label"><div class="overlay-box"><%= letter %></div></div>
     <% end %>
-    <% board.spaces.each do |space| %>
-      <div><%= space.coordinate %></div>
+    <% board.spaces.order(:coordinate).each do |space| %>
+      <% if space.status == 'empty' %>
+        <div class="block" id="test-block"><div class="overlay-box"></div></div>
+      <% elsif space.status == 'ship' %>
+        <div class="block" id="test-ship-block"><div id="test-ship-block"></div></div>
+      <% elsif space.status == 'miss' %>
+        <div class="block" id="test-hit-block"><div class="overlay-box"></div></div>
+      <% elsif space.status == 'hit' %>
+        <div class="block" id="test-miss-block"><div class="overlay-box"></div></div>
+      <% else %>
+        <div class="block" id="test-block"><div class="overlay-box"></div></div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -13,7 +13,7 @@ class Ship < ApplicationRecord
 
   def place_ship(length, ship_spaces)
     ship_spaces.each do |space| 
-      space.ship = self 
+      space.ship = self
       space.save
     end
   end

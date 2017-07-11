@@ -35,30 +35,30 @@ class Space < ApplicationRecord
   def self.get_ship_spaces(board, starting_letter, starting_number, direction, length)
     col = L_TO_N[starting_letter.to_sym]
     row = starting_number.to_i - 1
-    first_space = Space.find_by(coordinate: "#{col}#{row}")
+    first_space = Space.where(board_id: board.id, coordinate: "#{row}#{col}")
     spaces = [first_space]
     if direction == "up"
       (length-1).times do 
         row -= 1
-        next_space = Space.find_by(coordinate: "#{col}#{row}")
+        next_space = Space.where(board_id: board.id,coordinate: "#{row}#{col}")
         spaces << next_space
       end
     elsif direction == "down"
       (length-1).times do 
         row += 1
-        next_space = Space.find_by(coordinate: "#{col}#{row}")
+        next_space = Space.where(board_id: board.id,coordinate: "#{row}#{col}")
         spaces << next_space
       end
     elsif direction == "right"
       (length-1).times do 
         col += 1
-        next_space = Space.find_by(coordinate: "#{col}#{row}")
+        next_space = Space.where(board_id: board.id,coordinate: "#{row}#{col}")
         spaces << next_space
       end
     elsif direction == "left"
         (length-1).times do 
         col -= 1
-        next_space = Space.find_by(coordinate: "#{col}#{row}")
+        next_space = Space.where(board_id: board.id,coordinate: "#{row}#{col}")
         spaces << next_space
       end 
     end

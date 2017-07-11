@@ -32,36 +32,21 @@ h1 {
 h2 {
   font-family: 'Bubbler One', sans-serif;
 }
-.row {
-  /*display: grid;*/
-  display: inline-block;
-  /*grid-template-columns: repeat(11, 9.09%);*/
-  /*grid-template-rows: repeat(11, 9.09%);*/
-}
+
 .block {
   border: .01em solid rgba(0, 0, 0, .4);
   background-image: url(water.jpg);
-  height: 30px;
-  z-index: -1;
+  height: 3vw;
   text-align: center;
-  width: 35px;
-  margin: 0;
-  padding: 0;
-  float:left;
-}
-.outter {
-  width: 430px;
-  /*border: 2px solid rgba(0, 0, 0, .6);*/
-/*  border-radius: 5px;*/
-  margin-bottom: 5px;
-/*  background-image: url(water.jpg);
-  z-index: -3;*/
+  width: 4vw;
 }
 .overlay {
   height: 100%;
-  z-index: -2;
-  background-color: rgba(255, 255, 255, .55);
+  background-color: rgba(255, 255, 255, .6);
   margin: 0;
+}
+.active-spot {
+  border: 10px solid yellow;
 }
 
 .overlay-box {
@@ -71,14 +56,12 @@ h2 {
   margin: 0;
   box-shadow: 0px 1px .5px 1px rgba(0, 0, 0, .4);
 }
-.overlay-box:hover {
-  background-color: rgba(0, 0, 0, .3);;
-}
+
 .label {
   font-family: 'Arimo', sans-serif;
 }
 .label .overlay-box {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .85);
 }
 .player-one {
   margin-left: 5%;
@@ -91,7 +74,7 @@ h2 {
   display: inline-flex;
   flex-wrap: wrap;
 }
-@media (max-width: 966px){
+/*@media (max-width: 966px){
   .block {    
     height: 20px;
     width: 26.2px;
@@ -113,12 +96,11 @@ h2 {
     height: 50px;
     padding: 10px;
   }
-}
-@media only screen and (max-device-width: 415px) {
+}*/
+/*@media only screen and (max-device-width: 415px) {
   .block {
     height: 60px;
     width: 76px;
-    /*border: 1px solid rgba(0, 0, 0, .4);*/
   }
   .outter {
     width: 860px;
@@ -130,9 +112,8 @@ h2 {
   h1 {
     font-size: 50px;
     padding-left: 25%;
-    /*padding-bottom: 50px;*/
   }
   nav {
     height: 100px;
   }
-}
+}*/
