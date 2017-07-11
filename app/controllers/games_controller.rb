@@ -9,8 +9,13 @@ class GamesController < ApplicationController
     @ships = @board.ships.order(length: :desc)
   end
 
+  def play
+    @game = Game.find(get_params[:game_id])
+  end
+
+
   private
   def get_params
-    params.permit(:board_id)
+    params.permit(:board_id, :game_id)
   end
 end

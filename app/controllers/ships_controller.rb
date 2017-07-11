@@ -4,7 +4,8 @@ class ShipsController < ApplicationController
     length = place_ship_params[:ship_length].to_i
     ship = @board.ships.where("length = #{length}")[0]
     if Ship.all_ships_placed?(@board)
-      redirect_to('/play')
+      game = @board.game
+      redirect_to("/play/#{game.id}")
     else
       if !ship
         flash[:select_ship] = "Please select a ship!"
